@@ -9,8 +9,8 @@ YELLOW = "\033[33m"
 CYAN = "\033[36m"
 
 # Entrada de dados: tupla e lista
-palavras_tupla = ('Pitanga', 'Chiclete', 'Computador', 'Mouse', 'Arquivo', 'Teclado',
-          'Suco', 'Programador', 'Mundo', 'Python')
+palavras_tupla = ('Moletom', 'Estudar', 'Computador', 'Mouse', 'Arquivo',
+                  'Teclado','Suco', 'Programador', 'Mundo', 'Python')
 vogal = []
 
 print(f'''{'-'*45}

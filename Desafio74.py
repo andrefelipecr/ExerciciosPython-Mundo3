@@ -18,7 +18,7 @@ valores = []
 
 # Laço de repetição: encerra quando usuário responder 'n'
 while True:    
-    for i in range(4): # Laço de repetição: executa 4 vezes o comando abaixo
+    for i in range(5): # Laço de repetição: executa 4 vezes o comando abaixo
         valores += [randint(1, 10)] # Atribui valores aleatórios a uma lista
     
     print(f'''      {valores} 

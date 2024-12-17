@@ -13,12 +13,13 @@ print(f'''{'-'*30}
 {'-'*30}''')
 
 # Tupla: produtos e preços
-produtos = ('Notebook', 2500, 'PS5', 4500, 'Smartwatch', 800, 'Livro', 34.90, 'Hambúrguer', 28.90, 'Suco natural', 8.50)
+produtos = ('Notebook', 2500, 'PS5', 4500, 'Smartwatch', 800,
+            'Livro', 34.90, 'Hambúrguer', 28.90, 'Suco natural', 8.50)
 
-print(f"|{'Produto':^14}|{'Preço':^13}|")
+print(f"|{CYAN}{'Produto':^14}{RESET}|{GREEN}{'Preço':^13}{RESET}|")
 print('-'*30)
 
 # Laço de repetição: mostra os produtos e preços de forma tabular
 for i in range(0, len(produtos), 2):
-    print(f'{produtos[i]:20} R${produtos[i+1]:7.2f}')
+    print(f'{produtos[i]:.<21}R${produtos[i+1]:7.2f}')
 print('-'*30)

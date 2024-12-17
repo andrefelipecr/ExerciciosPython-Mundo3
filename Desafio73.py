@@ -8,7 +8,9 @@ GREEN = "\033[32m"
 YELLOW = "\033[33m"
 CYAN = "\033[36m"
 
-print(f'{MAGENTA}--- Tabela do Brasileirão 2024 ---{RESET}')
+print(f'''{'-'*20}
+| {MAGENTA}BRASILEIRÃO 2024{RESET} |
+{'-'*20}''')
 
 # Tupla: 20 times brasileiros
 times = ('Botafogo', 'Palmeiras', 'Flamengo', 'Fortaleza', 'Internacional', 'São Paulo',
@@ -20,21 +22,17 @@ ordem_times = sorted(times)
 
 # Exibir tabela de classificação 
 for i, tabela in enumerate(times):
-    print(f'{(i+1):2}º {tabela}')
+    print(f'|{(i+1):2}º {tabela:14}|')
 
-print(f'{MAGENTA}-{RESET}'*34)
+print(f'-'*20)
 
 # Mostrar classificados para a Libertadores
 print(f'{GREEN}Classificados para Copa Libertadores:{RESET} ', end='')
-for i in range(6):
-    print(times[i], end='')
-    print(end=', ') if i < 5 else print('.')
+print(times[0:5])
 
 # Mostra rebaixados
 print(f'\n{RED}Rebaixados para segunda divisão:{RESET} ', end='')
-for i in range(-4, 0):
-    print(times[i], end='')
-    print(end=', ') if i < -1 else print('.')
+print(times[-4:])
 
 # Mostra times em ordem alfabética
 print(f'\n{CYAN}Ordem alfabética:{RESET} ', end='')
@@ -43,4 +41,4 @@ for i in range(20):
     print(end=', ') if i < 19 else print('.')
 
 # Mostra a posição do time 'Flamengo'
-print(f'\nO {CYAN}Flamengo{RESET} está em {GREEN}{times.index("Flamengo") + 1}º{RESET} lugar.')
+print(f'\nO {GREEN}Palmeiras{RESET} está em {CYAN}{times.index("Palmeiras") + 1}º{RESET} lugar.')
