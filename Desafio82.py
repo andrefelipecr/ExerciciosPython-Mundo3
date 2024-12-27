@@ -10,8 +10,6 @@ CYAN = "\033[36m"
 
 print(f'{MAGENTA}--- Listas: Separador de Pares e Ímpares ---{RESET}')
 
-valores_par = []
-valores_impar = []
 valores = []
 i = 1
 
@@ -27,16 +25,8 @@ while True:
         print('-'*40)
         break
 
-# Laço de repetição: Verifica se o valor digitado é par ou ímpar
-for v in valores:
-    if v != 0:
-        if v % 2 == 0:
-            valores_par.append(v)
-        else:
-            valores_impar.append(v)
-
 print(f'{CYAN}Lista Completa:{RESET}',valores)
 print(f'{CYAN}Valores pares:{RESET}', end=' ')
-print(*valores_par, sep=', ')
+print(f'{[pares for pares in valores if pares % 2 == 0 and pares != 0]}') # Laço Compacto: mostra pares
 print(f'{CYAN}Valores ímpares:{RESET}', end=' ')
-print(*valores_impar, sep=', ')
+print(f'{[impares for impares in valores if impares % 2 == 1]}') # Laço compacto: mostra ímpares
