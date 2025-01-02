@@ -8,23 +8,16 @@ GREEN = "\033[32m"
 YELLOW = "\033[33m"
 CYAN = "\033[36m"
 
-print(f'{MAGENTA}{"-"*30}\n{"Simulador de Mega Sena":^30}\n{"-"*30}{RESET}')
+print(f'{MAGENTA}{"-"*30}\n{"Simulador de Mega da Virada":^30}\n{"-"*30}{RESET}')
 
 # Importações
 from time import sleep
-from random import randint
-
-jogos = int(input(f'{YELLOW}Quantos jogos você quer jogar?{RESET} '))
+from random import sample
 
 # Laço de repetição: executa a quantidade que o usuário escolher
-for i in range(jogos):
-    jogo = []
+for i in range(int(input(f'{YELLOW}Quantos jogos você quer jogar?{RESET} '))):
     print(f'{CYAN}Jogo {i+1}:{RESET}', end=' ')
-    for _ in range(6): # Laço: Sorteia 6 números e coloca numa lista vazia
-            while True: # Loop
-                num = randint(1, 60)
-                if num not in jogo: # Verifica se o número randomizado não repete na mesma lista
-                     break
-            jogo.append(num)
-    print(sorted(jogo)) # Mostra cada jogo em ordem crescente
+    palpites = sample(range(61), 6) # Sorteia, aleatóriamente, 6 números entre 0 e 60 sem repetições
+    print(sorted(palpites)) # Mostra os palpites em ordem crescente
     sleep(1.5)
+print(f'{GREEN:<15}BOA SORTE!!{RESET}')

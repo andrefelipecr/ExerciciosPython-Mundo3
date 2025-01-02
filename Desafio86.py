@@ -11,14 +11,14 @@ CYAN = "\033[36m"
 print(f'{MAGENTA}------- Matriz 3x3 -------{RESET}')
 
 # Matriz: 3 linhas e 3 colunas
-matriz = [[[], [], []],
-          [[], [], []],
-          [[], [], []]]
+matriz = [[0, 0, 0],
+          [0, 0, 0],
+          [0, 0, 0]]
 
 # Laço de repetição: atribui valores para cada slot dentro da matriz
 for l in range(3):
     for c in range(3):
-        matriz[l][c].append(int(input(f'{YELLOW}Digite um valor para [{l}, {c}]:{RESET} ')))
+        matriz[l][c] = int(input(f'{YELLOW}Digite um valor para [{l}, {c}]:{RESET} '))
 
 print(f'{"-="*20}\n{CYAN}Resultado Final:{RESET}', end='')
 
@@ -26,4 +26,4 @@ print(f'{"-="*20}\n{CYAN}Resultado Final:{RESET}', end='')
 for l in range(3):
     print()
     for c in range(3):
-        print('[ ',*matriz[l][c], end='  ] ')
+        print(f'[{matriz[l][c]:^5}]', end=' ')

@@ -14,12 +14,11 @@ valores = [[], []] # Lista com outras 2 listas imbutidas
 
 # Laço: usuário irá digitar 7 valores inteiros
 for i in range(1,8):
-    valores.append(int(input(f'{YELLOW}Digite o {i}º valor:{RESET} ')))
-    
-    if valores[-1] % 2 == 0: # Se o valor for PAR, entrará na lista[0]
-        valores[0].append(valores[-1])
+    valor = int(input(f'{YELLOW}Digite o {i}º valor:{RESET} '))
+    if valor % 2 == 0: # Se o valor for PAR, entrará na lista[0]
+        valores[0].append(valor)
     else: # Se o valor for ÍMPAR, entrará na lista[1]
-        valores[1].append(valores[-1])
+        valores[1].append(valor)
 
 valores[0].sort() # Lista de pares em ordem crescente
 valores[1].sort() # Lista de ímpares em ordem crescente

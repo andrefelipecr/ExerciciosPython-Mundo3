@@ -12,12 +12,12 @@ print(f'{MAGENTA}----- Análise de Matriz -----{RESET}')
 
 soma_pares = soma_coluna = 0
 linha2 = []
-matriz = [[[], [], []], [[], [], []], [[], [], []]] # Matriz 3x3
+matriz = [[0, 0, 0], [0, 0, 0], [0, 0, 0]] # Matriz 3x3
 
 for l in range(3):
     for c in range(3):
         valores = int(input(f'{YELLOW}Digite um valor para [{l}, {c}]:{RESET} '))
-        matriz[l][c].append(valores)
+        matriz[l][c] = valores
        
         if valores % 2 == 0: # Somatória dos valores pares da matriz
             soma_pares += valores
@@ -32,7 +32,7 @@ print('-='*20, end='')
 for l in range(3):
     print()
     for c in range(3):
-        print('[  ', *matriz[l][c], '  ]', end=' ')
+        print(f'[{matriz[l][c]:^5}]', end=' ')
 
 print()
 print('-='*20)
