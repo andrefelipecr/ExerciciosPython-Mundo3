@@ -15,7 +15,12 @@ dados = {} # Dicionário vazio
 # Entrada de dados no dicionário
 dados['Nome'] = input(f'{YELLOW}Nome do aluno: {RESET}')
 dados['Média'] = float(input(f'{YELLOW}Média de {dados["Nome"]}:{RESET} '))
-dados['Status'] = f'{GREEN}aprovado{RESET}' if dados["Média"] >= 7 else f'{RED}reprovado{RESET}'
+if dados['Média'] >= 7:
+    dados["Status"] = f'{GREEN}Aprovado{RESET}'
+elif  7 > dados["Média"] >= 5:
+    dados["Status"] = f'{YELLOW}Em recuperação{RESET}'
+else:
+    dados['Status'] =f'{RED}Reprovado{RESET}'
 
 # Mostra o conteúdo do dicionário
 print('-'*25)

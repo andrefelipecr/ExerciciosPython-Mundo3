@@ -22,5 +22,5 @@ if dados['CTPS'] != 0:
 print('-='*23)
 print(f'{CYAN}Resultados Finais:{RESET}')
 for k ,v in dados.items():
-    print(f'{k} tem o valor {v}')
+    print(f'  - {k} tem o valor {v}')
     

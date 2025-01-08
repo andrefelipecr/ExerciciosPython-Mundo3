@@ -20,12 +20,10 @@ print(f'Joguem os dados!')
 sleep(1)
 
 # Dicionário: cada jogador recebe um número aleatório entre 1 e 6
-sorteio = {
-    f'{RED}jogador vermelho{RESET}': randint(1, 6),
-    f'{MAGENTA}jogador magenta {RESET}': randint(1, 6),
-    f'{GREEN}jogador verde   {RESET}': randint(1, 6),
-    f'{YELLOW}jogador amarelo {RESET}': randint(1, 6)
-    }
+sorteio = {f'{RED}jogador vermelho{RESET}': randint(1, 6),
+           f'{MAGENTA}jogador magenta {RESET}': randint(1, 6),
+           f'{GREEN}jogador verde   {RESET}': randint(1, 6),
+           f'{YELLOW}jogador amarelo {RESET}': randint(1, 6)}
 
 # Laço: mostra os resultados do sorteio
 for k, v in sorteio.items():

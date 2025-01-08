@@ -13,14 +13,24 @@ lista_clientes = []
 mulheres = []
 acima_da_media = []
 
+# Loop principal: cadastra dados de várias pessoas até que o usuário escolha parar
 while True: 
     print('-='*15)
+    
     nome = input(f'{YELLOW}Nome do cliente:{RESET} ')
+    
+    while True:
+        gênero = input(f'{YELLOW}Gênero [m/f]:{RESET} ').strip().lower()[0]
+        if gênero not in 'mf': # Validação de erro
+            print(VOLTA,LIMPA,VOLTA)
+            print(f'{RED}Inválido!{RESET} Digite apenas M ou F.')
+        else:
+            break
     
     # Dicionário: Guarda dados de clientes
     clientes = {
         "nome": nome,
-        "gênero": input(f'{YELLOW}Gênero [m/f]:{RESET} ').strip().lower()[0],
+        "gênero": gênero,
         "idade": int(input(f'{YELLOW}Idade de {nome}:{RESET} '))
     }
     
@@ -34,9 +44,16 @@ while True:
     
     lista_clientes.append(clientes) # Lista: Contêm um dicionário para cada cliente
     
-    escolha = input(f'Continuar cadastrando clientes? [s/n]: ').strip().lower()[0]
-    print(VOLTA,LIMPA,VOLTA)
-    if escolha == 'n':
+    # Loop: valida se o usuário respondeu, corretamente, a pergunta
+    while True:
+        escolha = input(f'Continuar cadastrando clientes? [s/n]: ').strip().lower()[0]
+        print(VOLTA,LIMPA,VOLTA)
+        if escolha not in 'sn': # Validação de erro
+            print(f'{RED}Inválido!{RESET} Responda apenas S ou N.')
+        else: # Encerra o loop
+            break
+    
+    if escolha == 'n': # Encerra o loop principal
         break
 
 media_idades = soma_idades / cadastros # Calcula a média de idades dos clientes
@@ -49,10 +66,14 @@ for c in lista_clientes:
 print('-='*15)
 print(f'{CYAN}Resultados Finais:{RESET}')
 print(f'A) Ao todo, {cadastros} clientes foram cadastrados.')
-print(f'B) {media_idades} anos é a idade média dos clientes.')
-print(f'C) As clientes mulheres são {", ".join(mulheres)}.')
+print(f'B) {media_idades:.2f} anos é a idade média dos clientes.')
 
-if acima_da_media:
+if mulheres: # Verifica se há mulheres na lista
+    print(f'C) As clientes mulheres são {", ".join(mulheres)}.')
+else:
+    print(f'C) Nenhuma cliente mulher foi cadastrada.')
+
+if acima_da_media: # Verifica se há pessoas com idades acima da média
     print(f'D) Clientes com idade acima da média:')
     for cliente in acima_da_media:
         print(f'    >>> {cliente["nome"]}; idade = {cliente["idade"]} anos')
