@@ -18,6 +18,11 @@ def área(l, c):
     print('-'*35)
     a = l * c
     lista_áreas.append(a)
+# Vizualização das dimensões do terreno formatada
+    print("        ┌" + "─" *10 + "┐")
+    print(f"{l:5} m │" + " " *10 + "│")
+    print("        └" + "─" *10 + "┘")
+    print(f'{c:>15} m')
     print(f'A área do terreno é de {CYAN}{a:.1f} m²{RESET}.')
     print('-'*35)
 
