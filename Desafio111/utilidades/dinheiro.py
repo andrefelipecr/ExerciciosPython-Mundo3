@@ -43,3 +43,4 @@ def analise(preço, percentual):
     print(metade(preço))
     print(ajuste(preço, percentual))
     print('-'*30)
+    
