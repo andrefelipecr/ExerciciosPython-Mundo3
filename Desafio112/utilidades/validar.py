@@ -10,11 +10,11 @@ def limpar_terminal():
 
 def input_dinheiro(msg):
     while True:
+        entrada = input(msg).replace(',', '.').strip()
         try:
-            entrada = input(msg).replace(',', '.').strip()
             valor = float(entrada)
         except:
-            print(f'{RED}Erro! O valor inserido não é um preço válido.{RESET}')
+            print(f'{RED}Erro! "{entrada}" não é um preço válido.{RESET}')
         else:
             limpar_terminal()
             return valor
