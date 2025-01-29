@@ -4,21 +4,21 @@ def formatado(preço):
     return preço
 
 
-def dobro(preço, formatar):
+def dobro(preço, formatar=False):
     preço *= 2
     if formatar:
         preço = formatado(preço)
     return preço
 
 
-def metade(preço, formatar):
+def metade(preço, formatar=False):
     preço /= 2
     if formatar:
         preço = formatado(preço)
     return preço
 
 
-def ajuste(preço, percentual, formatar):
+def ajuste(preço, percentual, formatar=False):
     if percentual < 0:
         percentual = abs(percentual)
         
